@@ -6,19 +6,38 @@
 <title>Pedro De Paiva | Founder, engineer and software builder</title>
 <meta name="description" content="Pedro De Paiva is a mechanical engineer and founder of Zigrawbohnbawerick Pty Ltd. Software products, free CAD tools under his own name, and eight years of real engineering." />
 <meta name="theme-color" content="#ECE6D8" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link rel="canonical" href="https://pedro.zigrawbohnbawerick.org/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://pedro.zigrawbohnbawerick.org/" />
+<meta property="og:title" content="Pedro De Paiva | Founder, engineer and software builder" />
+<meta property="og:description" content="Pedro De Paiva is a mechanical engineer and founder of Zigrawbohnbawerick Pty Ltd. Software products, free CAD tools under his own name, and eight years of real engineering." />
+<meta property="og:image" content="https://pedro.zigrawbohnbawerick.org/img/og.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Drawing sheet with the name Pedro De Paiva, the words Engineer and founder, and an engineering drawing of a flange" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="favicon.ico" sizes="32x32" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<link rel="preload" href="fonts/fraunces-roman.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/fraunces-italic.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="fonts/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin />
 <style>
+  @font-face{font-family:"Fraunces"; src:url(fonts/fraunces-roman.woff2) format("woff2"); font-style:normal; font-weight:400 700; font-display:swap}
+  @font-face{font-family:"Fraunces"; src:url(fonts/fraunces-italic.woff2) format("woff2"); font-style:italic; font-weight:400 700; font-display:swap}
+  @font-face{font-family:"Hanken Grotesk"; src:url(fonts/hanken-grotesk.woff2) format("woff2"); font-style:normal; font-weight:400 700; font-display:swap}
+  @font-face{font-family:"JetBrains Mono"; src:url(fonts/jetbrains-mono.woff2) format("woff2"); font-style:normal; font-weight:400 700; font-display:swap}
+
   :root{
-    --paper:#ECE6D8; --paper-2:#E3DCCB; --ink:#1A1B17; --ink-soft:#43443c;
+    --paper:#ECE6D8; --paper-2:#E3DCCB; --ink:#1A1B17; --ink-soft:#43443c; --ink-rule:#3a3b34; --ink-muted:#9a9b90;
     --emerald:#1f6f4d; --emerald-bright:#2e9a6c; --mustard:#bd8413; --rule:#c9c0ac;
-    --cell:34px; --max:1180px; --gutter:28px;
+    --sheet:color-mix(in srgb,var(--paper) 90%,white);
+    --cell:34px; --max:1180px; --gutter:28px; --bar:3.875rem;
     --serif:"Fraunces",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
     --ease:cubic-bezier(.16,1,.3,1);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth; scrollbar-color:var(--ink-soft) var(--paper-2)}
+  html{scroll-behavior:smooth; scroll-padding-top:var(--bar); scrollbar-color:var(--ink-soft) var(--paper-2)}
   body{
     background-color:var(--paper); color:var(--ink); font-family:var(--sans);
     line-height:1.6; -webkit-font-smoothing:antialiased;
@@ -36,7 +55,9 @@
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   ::selection{background:var(--emerald); color:var(--paper)}
-  :focus-visible{outline:2px solid var(--emerald); outline-offset:3px; border-radius:2px}
+  :focus-visible{outline:2px solid var(--emerald); outline-offset:3px; border-radius:2px; scroll-margin-block:10px}
+  .sponsor :focus-visible{outline-color:var(--ink)}
+  footer :focus-visible{outline-color:var(--paper)}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter); position:relative; z-index:2}
   a{color:inherit; text-decoration-thickness:1px; text-underline-offset:.2em; text-decoration-color:color-mix(in srgb,var(--emerald) 55%,transparent); transition:text-decoration-color .2s}
   a:hover{text-decoration-color:var(--emerald)}
@@ -61,7 +82,7 @@
 
   /* ---- buttons ---- */
   .btn{font-family:var(--mono); font-size:.74rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; text-decoration:none;
-    padding:13px 18px; border-radius:2px; border:1px solid var(--ink); display:inline-flex; gap:10px; align-items:center;
+    padding:13px 18px; border-radius:2px; border:1px solid var(--ink); display:inline-flex; gap:10px; align-items:center; overflow-wrap:anywhere;
     transition:background .2s,color .2s,border-color .2s,transform .25s var(--ease)}
   .btn .i{transition:transform .25s var(--ease)}
   .btn.primary{background:var(--ink); color:var(--paper)}
@@ -76,35 +97,54 @@
   /* ---- title block (shared) ---- */
   .tb{display:grid; border:1px solid var(--ink); border-radius:2px; background:color-mix(in srgb,var(--paper-2) 70%,transparent); overflow:hidden}
   .tb>div{padding:10px 14px 11px; border-top:1px solid var(--rule); border-left:1px solid var(--rule); margin:-1px 0 0 -1px; min-width:0}
-  .tb dt{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:3px; white-space:nowrap}
+  .tb dt{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:3px; overflow-wrap:anywhere}
   .tb dd{font-weight:600; font-size:.92rem; line-height:1.35; font-variant-numeric:tabular-nums; overflow-wrap:break-word}
   .tb dd.live{color:var(--emerald)}
   .tb dd.live::before{content:""; display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--emerald); margin-right:8px; vertical-align:1px}
   .tb dd a{text-decoration-color:color-mix(in srgb,var(--ink) 35%,transparent)}
+  /* the company name is one long word: below this width it needs a full row */
+  @media(max-width:27em){
+    .tb .span{grid-column:1/-1}
+    .tb .last{order:1}
+  }
 
   /* section strip: heading left, sheet data right */
   .sh{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; padding-bottom:22px; margin-bottom:48px; border-bottom:1px solid var(--ink)}
   .meta{display:flex; gap:36px; flex:none; text-align:right}
   .meta dt{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:2px; white-space:nowrap}
   .meta dd{font-weight:600; font-size:.9rem; font-variant-numeric:tabular-nums; white-space:nowrap}
-  @media(max-width:760px){
+  @media(max-width:47.5em){
     .sh{flex-direction:column; align-items:flex-start; gap:18px; margin-bottom:36px}
-    .meta{text-align:left; gap:28px; flex-wrap:wrap}
+    .meta{text-align:left; gap:28px; flex-wrap:wrap; max-width:100%}
+    .meta dd{white-space:normal}
   }
 
   /* ---- top bar ---- */
   header.bar{position:sticky; top:0; z-index:20; backdrop-filter:blur(7px); -webkit-backdrop-filter:blur(7px);
     background:color-mix(in srgb,var(--paper) 80%,transparent); border-bottom:1px solid var(--rule)}
-  .bar .wrap{display:flex; align-items:center; justify-content:space-between; height:62px}
-  .sig{font-family:var(--serif); font-weight:600; font-size:1.18rem; letter-spacing:-.01em; text-decoration:none}
+  .bar .wrap{display:flex; flex-wrap:wrap; align-items:center; column-gap:22px; min-height:var(--bar)}
+  .sig{font-family:var(--serif); font-weight:600; font-size:1.18rem; letter-spacing:-.01em; text-decoration:none; padding-block:7px}
   .sig b{color:var(--emerald); font-weight:600}
-  .bar nav{display:flex; gap:22px; align-items:center}
-  .bar nav a{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); text-decoration:none; transition:color .2s}
+  .bar nav{display:flex; gap:22px; align-items:center; margin-left:auto}
+  .bar nav a,.bar .cta{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; text-decoration:none; transition:color .2s}
+  .bar nav a{color:var(--ink-soft)}
   .bar nav a:hover{color:var(--ink)}
-  .bar nav a.cta{color:var(--paper); background:var(--ink); padding:8px 14px; border-radius:2px; display:inline-flex; gap:8px; align-items:center}
-  .bar nav a.cta:hover{background:var(--mustard); color:var(--ink)}
-  .bar nav a.cta .i{width:14px; height:14px}
-  @media(max-width:720px){.bar nav a.hideable{display:none} .bar nav{gap:16px}}
+  .bar .cta{position:relative; color:var(--paper); background:var(--ink); padding:8px 14px; border-radius:2px; display:inline-flex; gap:8px; align-items:center}
+  .bar .cta::after{content:""; position:absolute; inset:-5px 0} /* 44px target around the 34px button */
+  .bar .cta:hover{background:var(--mustard); color:var(--ink)}
+  .bar .cta .i{width:14px; height:14px}
+  /* phones: the section links take their own row, so every sheet stays one tap away */
+  @media(max-width:45em){
+    :root{--bar:6.125rem}
+    .bar .wrap{min-height:0; justify-content:space-between}
+    .sig{padding-block:11px}
+    .bar nav{order:1; flex:1 0 100%; flex-wrap:wrap; justify-content:space-between; gap:0 4px; margin:0 calc(var(--gutter)*-1); padding:0 var(--gutter); border-top:1px solid var(--rule)}
+    .bar nav a{padding-block:13px}
+  }
+  @media(max-width:45em) and (max-height:32em){
+    :root{--bar:0rem}
+    header.bar{position:static}
+  }
 
   /* ---- hero: sheet 1 ---- */
   .hero{padding:40px 0 0}
@@ -120,13 +160,13 @@
   .dwwrap{justify-self:end; width:100%; max-width:520px}
   .dw{width:100%; height:auto; display:block}
   .frame .tb{border-width:1px 0 0; border-radius:0 0 3px 3px; grid-template-columns:1.25fr .9fr 1.35fr .9fr 1.7fr .7fr; background:color-mix(in srgb,var(--paper-2) 60%,transparent)}
-  @media(max-width:980px){
+  @media(max-width:61.25em){
     .frame-body{padding:56px 36px 40px}
     .heroTop{grid-template-columns:1fr; gap:36px}
     .dwwrap{justify-self:start; max-width:460px}
     .frame .tb{grid-template-columns:repeat(3,1fr)}
   }
-  @media(max-width:620px){
+  @media(max-width:38.75em){
     .hero{padding-top:24px}
     .frame-body{padding:48px 20px 32px}
     .zy{display:none}
@@ -141,7 +181,7 @@
   @keyframes rise{from{transform:translateY(108%)} to{transform:none}}
   @keyframes fade{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none}}
 
-  /* the drawing draws itself: every stroke has pathLength=1 */
+  /* the drawing draws itself: every solid stroke has pathLength=1. chain lines keep their real dash pattern, so they fade in */
   .dw [pathLength]{stroke-dasharray:1; stroke-dashoffset:1; animation:draw 1.1s var(--ease) forwards}
   .dw .g1 [pathLength]{animation-delay:.2s}
   .dw .g2 [pathLength]{animation-delay:.45s}
@@ -152,31 +192,25 @@
   @keyframes fadeIn{from{opacity:0} to{opacity:1}}
   .dw .thin{stroke:var(--ink); stroke-width:.9; fill:none}
   .dw .thick{stroke:var(--ink); stroke-width:1.8; fill:none}
-  .dw .chain{stroke:var(--ink-soft); stroke-width:.8; fill:none; stroke-dasharray:1}
+  .dw .chain{stroke:var(--ink-soft); stroke-width:.8; fill:none; stroke-dasharray:18 4 3 4; animation:fadeIn .6s .2s var(--ease) both}
+  .dw .chain.pcd{stroke-dasharray:18.4 4.1 3.1 4.1} /* closes evenly on the r=104 pitch circle */
   .dw .em{stroke:var(--emerald)}
   .dw .hatch{fill:url(#hatch); stroke:none}
+  .dw .hatch-line{stroke:var(--ink); stroke-width:.7; opacity:.75}
   .dw .arrow{fill:var(--ink); stroke:none}
+  .dw .arrow.em{fill:var(--emerald)}
   .dw text{font-family:var(--mono); font-size:11px; letter-spacing:.04em; fill:var(--ink-soft)}
   .dw text.k{fill:var(--emerald); font-weight:700}
-
-  @media(prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto}
-    .ln>*,.fade,.dw [pathLength],.dw .late{animation:none}
-    .dw [pathLength]{stroke-dashoffset:0}
-    .btn,.btn .i,.prod,.fig img,.card{transition:none}
-  }
 
   /* ---- sheets ---- */
   main>section{padding:96px 0}
   main>section+section{border-top:1px solid var(--ink)}
-  section[id]{scroll-margin-top:62px}
-  @media(max-width:760px){main>section{padding:64px 0}}
+  @media(max-width:47.5em){main>section{padding:64px 0}}
 
   /* products: drawing sheets */
   .prodGrid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px}
   .prod{border:1px solid var(--ink); border-radius:3px; background:color-mix(in srgb,var(--paper-2) 58%,transparent); display:flex; flex-direction:column; position:relative;
     transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s}
-  .prod:hover{transform:translateY(-3px); box-shadow:0 18px 34px -20px color-mix(in srgb,var(--ink) 55%,transparent); border-color:var(--emerald)}
   .prod .body{padding:30px 30px 26px; flex:1}
   .prod h3{font-size:1.65rem; margin-bottom:10px}
   .prod h3 small{display:block; font:500 .68rem var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-top:6px}
@@ -184,25 +218,24 @@
   .prod .btns{margin-top:24px}
   .prod .tb{border-width:1px 0 0; border-radius:0 0 3px 3px; grid-template-columns:repeat(2,1fr); background:transparent}
   .prod.feat{grid-column:1/-1; flex-direction:row; flex-wrap:wrap}
-  .prod.feat .body{flex:1 1 380px; padding:40px 40px 34px}
+  .prod.feat .body{flex:1 1 380px; min-width:0; padding:40px 40px 34px}
   .prod.feat .art{flex:1 1 340px; display:flex; align-items:center; justify-content:center; padding:32px 40px; border-left:1px solid var(--rule)}
   .prod.feat .tb{flex:1 1 100%; grid-template-columns:repeat(3,1fr)}
   .prod.feat h3{font-size:2.2rem}
   .prod.feat p{font-size:1.14rem; max-width:40ch}
   .fan{width:100%; max-width:360px; height:auto; display:block; overflow:visible}
-  .fan .sheet{fill:color-mix(in srgb,var(--paper) 90%,white); stroke:var(--ink); stroke-width:1.2; transition:transform .5s var(--ease)}
+  .fan .sheet{fill:var(--sheet); stroke:var(--ink); stroke-width:1.2}
   .fan .line{stroke:var(--ink-soft); stroke-width:1.1; stroke-linecap:round; fill:none}
   .fan .em{stroke:var(--emerald); stroke-width:1.4}
   .fan .arr{stroke:var(--emerald); fill:none; stroke-width:1.4; stroke-linecap:round; stroke-linejoin:round}
-  .fan .o1,.fan .o2,.fan .o3{transform-box:fill-box; transform-origin:50% 100%}
-  .prod.feat:hover .o1{transform:rotate(-7deg) translateX(-10px)}
-  .prod.feat:hover .o3{transform:rotate(7deg) translateX(10px)}
-  @media(max-width:760px){
-    .prodGrid{grid-template-columns:1fr; gap:18px}
+  .fan .o1,.fan .o2,.fan .o3{transform-box:fill-box; transform-origin:50% 100%; transition:transform .5s var(--ease)}
+  @media(max-width:47.5em){
+    .prodGrid{grid-template-columns:minmax(0,1fr); gap:18px}
     .prod .body{padding:26px 22px 22px}
     .prod.feat .body{padding:30px 22px 24px}
     .prod.feat .art{border-left:0; border-top:1px solid var(--rule); padding:26px 22px}
     .prod.feat .tb,.prod .tb{grid-template-columns:repeat(2,1fr)}
+    .prod.feat .tb>div:last-child{grid-column:1/-1}
     .prod.feat h3{font-size:1.9rem}
   }
 
@@ -210,11 +243,11 @@
   .statement{font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,3.6vw,2.75rem); line-height:1.3; letter-spacing:-.02em; max-width:24ch; margin-bottom:44px; text-wrap:balance}
   .statement em{font-style:italic; color:var(--emerald)}
   .freeGrid{display:grid; grid-template-columns:repeat(2,1fr); gap:22px}
-  @media(max-width:760px){.freeGrid{grid-template-columns:1fr; gap:18px}}
+  @media(max-width:47.5em){.freeGrid{grid-template-columns:minmax(0,1fr); gap:18px}}
 
   /* sponsorship: the one mustard moment */
   .sponsor{margin-top:28px; background:var(--mustard); color:var(--ink); border:1px solid var(--ink); border-radius:3px; position:relative; overflow:hidden;
-    display:grid; grid-template-columns:1.25fr 1fr; gap:28px 48px; align-items:center; padding:44px 44px 44px 64px; scroll-margin-top:84px}
+    display:grid; grid-template-columns:1.25fr 1fr; gap:28px 48px; align-items:center; padding:44px 44px 44px 64px; scroll-margin-top:22px}
   .sponsor::before{content:""; position:absolute; top:0; bottom:0; left:0; width:20px; border-right:1px solid var(--ink);
     background:repeating-linear-gradient(-45deg,transparent 0 7px,color-mix(in srgb,var(--ink) 45%,transparent) 7px 8px)}
   .sponsor h2{font-size:clamp(1.9rem,3.8vw,2.9rem); margin-bottom:12px}
@@ -228,7 +261,7 @@
   .sponsor .tb dt{color:var(--ink)}
   .sponsor .tb dd a{text-decoration-color:color-mix(in srgb,var(--ink) 45%,transparent)}
   .sponsor .tb dd a:hover{text-decoration-color:var(--ink)}
-  @media(max-width:760px){
+  @media(max-width:47.5em){
     .sponsor{grid-template-columns:1fr; padding:34px 24px 28px 40px; gap:24px}
     .sponsor .tb{grid-template-columns:1fr}
   }
@@ -245,7 +278,7 @@
   .flow p{font-size:.96rem; color:var(--ink-soft); text-wrap:pretty}
   .bom{margin-top:48px; grid-template-columns:2.2fr 1fr}
   .bom dd{font-weight:500}
-  @media(max-width:760px){
+  @media(max-width:47.5em){
     .flow{grid-template-columns:1fr; gap:0; margin-top:40px}
     .flow li{padding:0 0 30px 30px}
     .flow li::before{top:8px; bottom:-8px; left:6px; right:auto; border-top:0; border-left:1px dashed var(--ink-soft)}
@@ -258,13 +291,14 @@
   .fig{display:grid; grid-template-columns:1.15fr 1fr; gap:40px; align-items:center}
   .fig:nth-child(even) figure{order:2}
   .fig figure{border:1px solid var(--ink); border-radius:3px; overflow:hidden; background:var(--paper-2)}
-  .fig img{width:100%; aspect-ratio:16/10; object-fit:cover; display:block; filter:grayscale(.45) sepia(.2) contrast(.95); transition:filter .6s var(--ease),transform 1.2s var(--ease)}
-  .fig:hover img{filter:none; transform:scale(1.02)}
+  .fig picture{display:block}
+  .fig img{width:100%; height:auto; aspect-ratio:16/10; object-fit:cover; display:block; transition:filter .6s var(--ease),transform 1.2s var(--ease)}
+  .fig img.cutout{object-fit:contain; background:#fff} /* a product shot on white: show all of it */
   .fig figcaption{display:flex; justify-content:space-between; gap:12px; padding:9px 14px; border-top:1px solid var(--ink); font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft)}
   .fig h3{font-size:1.5rem; margin-bottom:12px}
   .fig p{font-size:1.04rem; color:var(--ink-soft); max-width:46ch; text-wrap:pretty}
   .note{margin-top:56px; padding-top:28px; border-top:1px dashed var(--rule)}
-  @media(max-width:760px){
+  @media(max-width:47.5em){
     .figs{gap:40px}
     .fig{grid-template-columns:1fr; gap:18px}
     .fig:nth-child(even) figure{order:0}
@@ -277,11 +311,11 @@
   .rev{width:100%; border-collapse:collapse; border:1px solid var(--ink); background:color-mix(in srgb,var(--paper-2) 58%,transparent); font-size:.94rem}
   .rev caption{text-align:left; font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); padding:0 0 10px}
   .rev th{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); text-align:left; padding:10px 14px; border-bottom:1px solid var(--ink)}
-  .rev td{padding:13px 14px; border-bottom:1px solid var(--rule); vertical-align:top; color:var(--ink-soft); text-wrap:pretty}
+  .rev td{padding:13px 14px; border-bottom:1px solid var(--rule); vertical-align:top; color:var(--ink-soft); text-wrap:pretty; overflow-wrap:anywhere}
   .rev tr:last-child td{border-bottom:0}
   .rev td:first-child,.rev th:first-child{width:52px; border-right:1px solid var(--rule); text-align:center}
   .rev td:first-child{font-family:var(--serif); font-size:1.15rem; font-weight:600; color:var(--emerald)}
-  @media(max-width:860px){.bio{grid-template-columns:1fr; gap:36px} .rev{order:2}}
+  @media(max-width:53.75em){.bio{grid-template-columns:minmax(0,1fr); gap:36px} .rev{order:2}}
 
   /* footer */
   footer{border-top:1px solid var(--ink); padding:72px 0 44px; background:var(--ink); color:var(--paper); position:relative; z-index:2}
@@ -294,7 +328,30 @@
   footer .links a:hover{opacity:1; color:var(--emerald-bright)}
   footer .links .i{transition:transform .25s var(--ease)}
   footer .links a:hover .i{transform:translateX(3px)}
-  footer .fine{margin-top:56px; padding-top:22px; border-top:1px solid #3a3b34; color:#9a9b90; font-family:var(--mono); font-size:.7rem; letter-spacing:.02em; line-height:1.8; max-width:90ch}
+  footer .fine{margin-top:56px; padding-top:22px; border-top:1px solid var(--ink-rule); color:var(--ink-muted); font-family:var(--mono); font-size:.7rem; letter-spacing:.02em; line-height:1.8}
+  @media(max-width:47.5em),(pointer:coarse){
+    footer .links{gap:0}
+    footer .links a{padding-block:12px}
+  }
+
+  /* ---- input and motion preferences: keep this block last so it wins ---- */
+  @media(hover:hover){
+    .fig img{filter:grayscale(.45) sepia(.2) contrast(.95)}
+    .fig:hover img{filter:none}
+    .prod:has(a):hover{box-shadow:0 18px 34px -20px color-mix(in srgb,var(--ink) 55%,transparent); border-color:var(--emerald)}
+  }
+  @media(hover:hover) and (prefers-reduced-motion:no-preference){
+    .fig:hover img{transform:scale(1.02)}
+    .prod:has(a):hover{transform:translateY(-3px)}
+    .prod.feat:hover .o1{transform:rotate(-7deg) translateX(-10px)}
+    .prod.feat:hover .o3{transform:rotate(7deg) translateX(10px)}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .ln>*,.fade,.dw [pathLength],.dw .late,.dw .chain{animation:none}
+    .dw [pathLength]{stroke-dashoffset:0}
+    .btn,.btn .i,.prod,.fig img,.fan .o1,.fan .o3{transition:none}
+  }
 </style>
 </head>
 <body>
@@ -302,15 +359,15 @@
 
 <header class="bar">
   <div class="wrap">
-    <a class="sig" href="#top" aria-label="Pedro de Paiva, back to top">Pedro&nbsp;de&nbsp;<b>Paiva</b></a>
+    <a class="sig" href="#top" aria-label="Pedro De Paiva, back to top">Pedro&nbsp;De&nbsp;<b>Paiva</b></a>
     <nav aria-label="Main navigation">
       <a href="#products">Products</a>
-      <a href="#free-work" class="hideable">Free work</a>
-      <a href="#mrb" class="hideable">MRB</a>
-      <a href="#work" class="hideable">Work</a>
-      <a href="#about" class="hideable">About</a>
-      <a href="#sponsor" class="cta"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Support</a>
+      <a href="#free-work">Free work</a>
+      <a href="#mrb">MRB</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
     </nav>
+    <a href="#sponsor" class="cta"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Support</a>
   </div>
 </header>
 
@@ -340,23 +397,27 @@
             <svg class="dw" viewBox="0 0 560 400" role="img" aria-label="Engineering drawing of a flange: front view with eight bolt holes and section A-A with hatching and dimension lines">
               <defs>
                 <pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                  <line x1="0" y1="0" x2="0" y2="7" stroke="#1A1B17" stroke-width=".7" opacity=".75"/>
+                  <line class="hatch-line" x1="0" y1="0" x2="0" y2="7"/>
                 </pattern>
               </defs>
-              <!-- g1: centre lines and cutting plane -->
+              <!-- g1: centre lines and cutting plane; dash offsets put a long dash on each crossing -->
               <g class="g1">
-                <line class="chain" x1="14" y1="200" x2="312" y2="200" pathLength="1"/>
-                <line class="chain" x1="160" y1="42" x2="160" y2="358" pathLength="1"/>
-                <line class="chain" x1="338" y1="200" x2="472" y2="200" pathLength="1"/>
+                <line class="chain" x1="14" y1="200" x2="312" y2="200" stroke-dashoffset="8"/>
+                <line class="chain" x1="160" y1="42" x2="160" y2="358" stroke-dashoffset="25"/>
+                <line class="chain" x1="338" y1="200" x2="472" y2="200"/>
+                <line class="chain" x1="414" y1="96" x2="460" y2="96" stroke-dashoffset="15"/>
+                <line class="chain" x1="414" y1="304" x2="460" y2="304" stroke-dashoffset="15"/>
                 <line class="thick em" x1="160" y1="40" x2="160" y2="60" pathLength="1"/>
                 <line class="thick em" x1="160" y1="340" x2="160" y2="360" pathLength="1"/>
+                <line class="thin em" x1="160" y1="46" x2="134" y2="46" pathLength="1"/>
+                <line class="thin em" x1="160" y1="354" x2="134" y2="354" pathLength="1"/>
               </g>
               <!-- g2: front view -->
               <g class="g2">
                 <circle class="thick" cx="160" cy="200" r="130" pathLength="1"/>
                 <circle class="thick" cx="160" cy="200" r="78" pathLength="1"/>
                 <circle class="thick" cx="160" cy="200" r="48" pathLength="1"/>
-                <circle class="chain" cx="160" cy="200" r="104" pathLength="1" stroke-dasharray="1"/>
+                <circle class="chain pcd" cx="160" cy="200" r="104"/>
                 <circle class="thin" cx="264" cy="200" r="9" pathLength="1"/>
                 <circle class="thin" cx="233.5" cy="126.5" r="9" pathLength="1"/>
                 <circle class="thin" cx="160" cy="96" r="9" pathLength="1"/>
@@ -366,20 +427,30 @@
                 <circle class="thin" cx="160" cy="304" r="9" pathLength="1"/>
                 <circle class="thin" cx="233.5" cy="273.5" r="9" pathLength="1"/>
               </g>
-              <!-- g3: section A-A -->
+              <!-- g3: section A-A, third angle: viewed from the right, so the hub faces the front view.
+                   The plane runs through the top and bottom bolt holes, so the hatch breaks there. -->
               <g class="g3">
-                <polygon class="hatch late" points="360,70 386,70 386,122 450,122 450,152 360,152"/>
-                <polygon class="hatch late" points="360,330 386,330 386,278 450,278 450,248 360,248"/>
-                <path class="thick" d="M360 70h26v52h64v30H360z" pathLength="1"/>
-                <path class="thick" d="M360 330h26v-52h64v-30H360z" pathLength="1"/>
+                <polygon class="hatch late" points="424,70 450,70 450,87 424,87"/>
+                <polygon class="hatch late" points="424,105 450,105 450,152 360,152 360,122 424,122"/>
+                <polygon class="hatch late" points="424,295 450,295 450,248 360,248 360,278 424,278"/>
+                <polygon class="hatch late" points="424,313 450,313 450,330 424,330"/>
+                <path class="thick" d="M450 70h-26v52h-64v30h90z" pathLength="1"/>
+                <path class="thick" d="M450 330h-26v-52h-64v-30h90z" pathLength="1"/>
+                <line class="thick" x1="424" y1="87" x2="450" y2="87" pathLength="1"/>
+                <line class="thick" x1="424" y1="105" x2="450" y2="105" pathLength="1"/>
+                <line class="thick" x1="424" y1="295" x2="450" y2="295" pathLength="1"/>
+                <line class="thick" x1="424" y1="313" x2="450" y2="313" pathLength="1"/>
+                <!-- far edges of the bore -->
+                <line class="thick" x1="360" y1="152" x2="360" y2="248" pathLength="1"/>
+                <line class="thick" x1="450" y1="152" x2="450" y2="248" pathLength="1"/>
               </g>
               <!-- g4: dimensions and leaders -->
               <g class="g4">
-                <line class="thin" x1="388" y1="70" x2="496" y2="70" pathLength="1"/>
-                <line class="thin" x1="388" y1="330" x2="496" y2="330" pathLength="1"/>
+                <line class="thin" x1="454" y1="70" x2="496" y2="70" pathLength="1"/>
+                <line class="thin" x1="454" y1="330" x2="496" y2="330" pathLength="1"/>
                 <line class="thin" x1="488" y1="70" x2="488" y2="330" pathLength="1"/>
-                <line class="thin" x1="360" y1="334" x2="360" y2="372" pathLength="1"/>
-                <line class="thin" x1="450" y1="282" x2="450" y2="372" pathLength="1"/>
+                <line class="thin" x1="360" y1="282" x2="360" y2="372" pathLength="1"/>
+                <line class="thin" x1="450" y1="334" x2="450" y2="372" pathLength="1"/>
                 <line class="thin" x1="360" y1="364" x2="450" y2="364" pathLength="1"/>
                 <line class="thin" x1="240" y1="121" x2="286" y2="84" pathLength="1"/>
                 <line class="thin" x1="286" y1="84" x2="318" y2="84" pathLength="1"/>
@@ -391,10 +462,10 @@
                 <polygon class="arrow" points="360,364 370,360.5 370,367.5"/>
                 <polygon class="arrow" points="450,364 440,360.5 440,367.5"/>
                 <polygon class="arrow" points="240,121 251,119 245,113" />
-                <polygon class="arrow" points="160,60 155,50 165,50" fill="#1f6f4d" style="fill:var(--emerald)"/>
-                <polygon class="arrow" points="160,340 155,350 165,350" style="fill:var(--emerald)"/>
-                <text class="k" x="170" y="50">A</text>
-                <text class="k" x="170" y="356">A</text>
+                <polygon class="arrow em" points="124,46 134,41 134,51"/>
+                <polygon class="arrow em" points="124,354 134,349 134,359"/>
+                <text class="k" x="110" y="50">A</text>
+                <text class="k" x="110" y="358">A</text>
                 <text x="512" y="204" transform="rotate(-90 512 204)" text-anchor="middle">ØA</text>
                 <text x="405" y="386" text-anchor="middle">C</text>
                 <text x="290" y="79">8× ØD</text>
@@ -408,9 +479,9 @@
       <dl class="tb fade" style="--d:.7s">
         <div><dt>Drawn by</dt><dd>Pedro De Paiva</dd></div>
         <div><dt>Base</dt><dd>Perth, WA</dd></div>
-        <div><dt>Trained</dt><dd>Mechanical engineering</dd></div>
+        <div class="span"><dt>Trained</dt><dd>Mechanical engineering</dd></div>
         <div><dt>Experience</dt><dd>8+ years</dd></div>
-        <div><dt>Company</dt><dd>Zigrawbohnbawerick Pty Ltd</dd></div>
+        <div class="span last"><dt>Company</dt><dd>Zigrawbohnbawerick Pty Ltd</dd></div>
         <div><dt>Sheet</dt><dd>1 of 6</dd></div>
       </dl>
     </div>
@@ -523,7 +594,7 @@
       </article>
     </div>
 
-    <aside id="sponsor" class="sponsor" aria-labelledby="h-sponsor">
+    <section id="sponsor" class="sponsor" aria-labelledby="h-sponsor">
       <div>
         <h2 id="h-sponsor">Support the free work</h2>
         <p>If SolidDraft or Catallax is useful to you, a donation or a sponsorship keeps me building them in the open, under my own name.</p>
@@ -536,7 +607,7 @@
         <div><dt>Ko-fi</dt><dd><a href="https://ko-fi.com/pedropaiva56920">ko-fi.com/<wbr>pedropaiva56920</a></dd></div>
         <div><dt>GitHub Sponsors</dt><dd><a href="https://github.com/sponsors/BohnBawerick">github.com/<wbr>sponsors/<wbr>BohnBawerick</a></dd></div>
       </dl>
-    </aside>
+    </section>
   </div>
 </section>
 
@@ -579,7 +650,10 @@
     <div class="figs">
       <article class="fig">
         <figure>
-          <img src="img/subsea-frame-dnv.jpg" width="768" height="529" alt="Yellow DNV-certified subsea deployment frame, SWL 5T" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="img/subsea-frame-dnv-480.webp 480w, img/subsea-frame-dnv-768.webp 768w" sizes="(max-width:47.5em) calc(100vw - 56px), 578px" />
+            <img class="cutout" src="img/subsea-frame-dnv.jpg" width="768" height="529" alt="Yellow DNV-certified subsea deployment frame, SWL 5T" loading="lazy" decoding="async" />
+          </picture>
           <figcaption><span>Fig. 01</span><span>Subsea · DNV</span></figcaption>
         </figure>
         <div>
@@ -589,7 +663,10 @@
       </article>
       <article class="fig">
         <figure>
-          <img src="img/jacking-tool.jpg" width="1046" height="625" alt="Subsea PODLOCK hydraulic jacking tool on an orange deployment frame" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="img/jacking-tool-480.webp 480w, img/jacking-tool-768.webp 768w, img/jacking-tool-1046.webp 1046w" sizes="(max-width:47.5em) calc(100vw - 56px), 578px" />
+            <img src="img/jacking-tool.jpg" width="1046" height="625" alt="Subsea PODLOCK hydraulic jacking tool on an orange deployment frame" loading="lazy" decoding="async" />
+          </picture>
           <figcaption><span>Fig. 02</span><span>Hydraulics</span></figcaption>
         </figure>
         <div>
@@ -599,7 +676,10 @@
       </article>
       <article class="fig">
         <figure>
-          <img src="img/rtio-air-pollution.jpg" width="1400" height="732" alt="Mine-site air-pollution-control and dust-extraction plant under construction" loading="lazy" />
+          <picture>
+            <source type="image/webp" srcset="img/rtio-air-pollution-480.webp 480w, img/rtio-air-pollution-768.webp 768w, img/rtio-air-pollution-1200.webp 1200w" sizes="(max-width:47.5em) calc(100vw - 56px), 578px" />
+            <img src="img/rtio-air-pollution.jpg" width="1400" height="732" alt="Mine-site air-pollution-control and dust-extraction plant under construction" loading="lazy" decoding="async" />
+          </picture>
           <figcaption><span>Fig. 03</span><span>Industrial · $100M+</span></figcaption>
         </figure>
         <div>
@@ -633,10 +713,10 @@
         </tbody>
       </table>
       <div class="prose">
-        <p>I'm a mechanical engineer who got tired of watching solid engineering work get strangled by bureaucracy, endless reviews, and the unrelenting, indiscriminate use of Excel spreadsheets.</p>
-        <p>So in the age of AI, I <b>"learned" how to build it myself</b>. I couldn't have told you what a REST endpoint was a couple of months ago, but I sure as hell can get 20 agents competing for the best way to explain it like I'm 12, then ruthlessly steer myself toward grounded, production-ready decisions. Full-stack, end-to-end: domain model and architecture all the way through CI/CD pipelines and Docker deployments.</p>
-        <p>Look around — do I look like I have time to learn anything about UX design and logos? I have absolutely no idea what color matches whatever emotion. But if it quacks like a duck, and solves a real problem, it goes in the pond. <b>The MRB Platform was one result</b>: a production-shaped system I designed and built solo, the same kind of integrated internal tool a project-based engineering business actually needs.</p>
-        <p>Eight years designing real equipment (subsea tooling, industrial plants, mining structures) taught me where software can help. Now I build products through Zigrawbohnbawerick Pty Ltd and keep SolidDraft and Catallax free under my own name.</p>
+        <p>I like building things that make work easier. That started in mechanical engineering, where I've spent eight years on subsea tooling, industrial plants and mining structures.</p>
+        <p>Good engineers lose a lot of time to paperwork and spreadsheets, so I started making tools to win it back. A parametric dust collector took design from weeks to hours. A procurement system in Excel saved about $200k a year. The MRB Platform keeps a project's quotes, purchase orders and certificates together and shows what's missing before handover.</p>
+        <p>Zigrawbohnbawerick Pty Ltd takes that same thinking to everyday life. The company makes software that helps people get further with what they already have. First out is CareerForge, which helps people build a proper catalogue of their experience in their own words, then draw better job applications from it. It brings out what good people struggle to say about themselves, so employers can find them. Two more products are on the way.</p>
+        <p>Then there's CAD, which I've used my whole career and would love to see get better. SolidDraft is a free CAD app, and Catallax is the open geometry kernel underneath it. It's a tough one to take on, and that's a big part of the fun. Catallax is MIT-licensed, so anyone can use it and build on it.</p>
       </div>
     </div>
   </div>
@@ -656,11 +736,7 @@
         <a href="https://github.com/sponsors/BohnBawerick"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M13 5l7 7-7 7"/></svg>GitHub Sponsors</a>
       </div>
     </div>
-    <p class="fine">
-      MRB Platform is a personal project. Its demo and repository use fabricated company names, suppliers,
-      part numbers, prices and documents; no employer code or customer data is included.
-      &nbsp;·&nbsp; Built and designed by Pedro De Paiva.
-    </p>
+    <p class="fine">Built and designed by Pedro De Paiva.</p>
   </div>
 </footer>
 </body>
