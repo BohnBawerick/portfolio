@@ -306,16 +306,14 @@
   }
 
   /* about */
-  .bio{display:grid; grid-template-columns:1fr 1.5fr; gap:56px; align-items:start}
-  .bio .prose p:first-child{font-family:var(--serif); font-size:1.32rem; line-height:1.4; color:var(--ink); font-weight:500; letter-spacing:-.005em}
-  .rev{width:100%; border-collapse:collapse; border:1px solid var(--ink); background:color-mix(in srgb,var(--paper-2) 58%,transparent); font-size:.94rem}
-  .rev caption{text-align:left; font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); padding:0 0 10px}
-  .rev th{font-family:var(--mono); font-size:.7rem; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); text-align:left; padding:10px 14px; border-bottom:1px solid var(--ink)}
-  .rev td{padding:13px 14px; border-bottom:1px solid var(--rule); vertical-align:top; color:var(--ink-soft); text-wrap:pretty; overflow-wrap:anywhere}
-  .rev tr:last-child td{border-bottom:0}
-  .rev td:first-child,.rev th:first-child{width:52px; border-right:1px solid var(--rule); text-align:center}
-  .rev td:first-child{font-family:var(--serif); font-size:1.15rem; font-weight:600; color:var(--emerald)}
-  @media(max-width:53.75em){.bio{grid-template-columns:minmax(0,1fr); gap:36px} .rev{order:2}}
+  .notes{list-style:none; counter-reset:note; margin:0; padding:0; max-width:46rem}
+  .notes li{counter-increment:note; display:grid; grid-template-columns:3rem minmax(0,1fr); column-gap:18px; padding:22px 0; border-top:1px solid var(--rule)}
+  .notes li:first-child{border-top:0; padding-top:0}
+  .notes li:last-child{border-bottom:1px solid var(--rule)}
+  .notes li::before{content:counter(note) "."; grid-row:span 2; font-family:var(--serif); font-size:1.15rem; font-weight:600; color:var(--emerald)}
+  .notes blockquote{margin:0}
+  .notes p{font-family:var(--serif); font-size:1.24rem; line-height:1.4; color:var(--ink); font-weight:500; letter-spacing:-.005em; text-wrap:pretty}
+  .notes cite{display:block; margin-top:10px; font-family:var(--mono); font-size:.7rem; font-style:normal; font-weight:500; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft)}
 
   /* footer */
   footer{border-top:1px solid var(--ink); padding:72px 0 44px; background:var(--ink); color:var(--paper); position:relative; z-index:2}
@@ -365,7 +363,7 @@
       <a href="#free-work">Free work</a>
       <a href="#mrb">MRB</a>
       <a href="#work">Work</a>
-      <a href="#about">About</a>
+      <a href="#about">Notes</a>
     </nav>
     <a href="#sponsor" class="cta"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg>Support</a>
   </div>
@@ -696,29 +694,20 @@
 <section id="about" aria-labelledby="h-about">
   <div class="wrap">
     <header class="sh">
-      <h2 class="sec" id="h-about">A mechanical engineer who learned to ship software.</h2>
+      <h2 class="sec" id="h-about">General notes.</h2>
       <dl class="meta">
-        <div><dt>Revision</dt><dd>C</dd></div>
+        <div><dt>Unless</dt><dd>Otherwise stated</dd></div>
         <div><dt>Sheet</dt><dd>6 of 6</dd></div>
       </dl>
     </header>
-    <div class="bio">
-      <table class="rev">
-        <caption>Revision history</caption>
-        <thead><tr><th scope="col">Rev</th><th scope="col">Description</th></tr></thead>
-        <tbody>
-          <tr><td>A</td><td>Eight years designing real equipment: subsea tooling, industrial plants, mining structures.</td></tr>
-          <tr><td>B</td><td>Learned to ship software. Designed and built the MRB Platform solo, end to end.</td></tr>
-          <tr><td>C</td><td>Founded Zigrawbohnbawerick Pty Ltd. Builds products there and keeps SolidDraft and Catallax free under his own name.</td></tr>
-        </tbody>
-      </table>
-      <div class="prose">
-        <p>I like building things that make work easier. That started in mechanical engineering, where I've spent eight years on subsea tooling, industrial plants and mining structures.</p>
-        <p>Good engineers lose a lot of time to paperwork and spreadsheets, so I started making tools to win it back. A parametric dust collector took design from weeks to hours. A procurement system in Excel saved about $200k a year. The MRB Platform keeps a project's quotes, purchase orders and certificates together and shows what's missing before handover.</p>
-        <p>Zigrawbohnbawerick Pty Ltd takes that same thinking to everyday life. The company makes software that helps people get further with what they already have. First out is CareerForge, which helps people build a proper catalogue of their experience in their own words, then draw better job applications from it. It brings out what good people struggle to say about themselves, so employers can find them. Two more products are on the way.</p>
-        <p>Then there's CAD, which I've used my whole career and would love to see get better. SolidDraft is a free CAD app, and Catallax is the open geometry kernel underneath it. It's a tough one to take on, and that's a big part of the fun. Catallax is MIT-licensed, so anyone can use it and build on it.</p>
-      </div>
-    </div>
+    <ol class="notes">
+      <li><blockquote><p>Consistency is contrary to nature, contrary to life. The only completely consistent people are the dead.</p></blockquote><cite>Aldous Huxley, Do What You Will, 1929</cite></li>
+      <li><blockquote><p>Experience is not what happens to a man; it is what a man does with what happens to him.</p></blockquote><cite>Aldous Huxley, Texts and Pretexts, 1932</cite></li>
+      <li><blockquote><p>Most human beings have an almost infinite capacity for taking things for granted.</p></blockquote><cite>Aldous Huxley, Themes and Variations, 1950</cite></li>
+      <li><blockquote><p>Facts do not cease to exist because they are ignored.</p></blockquote><cite>Aldous Huxley, Proper Studies, 1927</cite></li>
+      <li><blockquote><p>I don't want comfort. I want God, I want poetry, I want real danger, I want freedom, I want goodness. I want sin.</p></blockquote><cite>Aldous Huxley, Brave New World, 1932</cite></li>
+      <li><blockquote><p>There's only one corner of the universe you can be certain of improving, and that's your own self.</p></blockquote><cite>Aldous Huxley, Time Must Have a Stop, 1944</cite></li>
+    </ol>
   </div>
 </section>
 
